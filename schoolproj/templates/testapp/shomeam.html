@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{%extends 'testapp/shome.html' %}
+{%load static%}
+
+{%block grand_child_block%}
+
+  <div class="container" align="center">
+      <h5>{{title}} </h5>
+      <p> {{request.user.username}}</p>
+      <p>  {{classx}}</p>
+      <p>  {{section}}</p>
+      <a href="/smathsam"   > <img src="https://icons.iconarchive.com/icons/kyo-tux/soft/64/Tutorial-icon.png" >Maths</a>
+      <a href="/senglisham" >   <img src="https://icons.iconarchive.com/icons/martz90/circle/64/books-icon.png" >English</a>
+      <a href="/sscienceam"   > <img src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/64/Categories-applications-education-science-icon.png">Science</a>
+      <a href="/shindiam"   > <img src="https://icons.iconarchive.com/icons/alecive/flatwoken/64/Apps-Google-Play-Books-icon.png">Hindi</a>
+      <a href="/steluguam"   > <img src="https://icons.iconarchive.com/icons/google/noto-emoji-objects/64/62858-closed-book-icon.png">Telugu</a>
+      <br>
+
+      <br>
+      <div class="container" align="center">
+
+
+        {%if recs%}
+              <table border="2">
+                <thead>
+                  <th> id</th>
+                  <th> title</th>
+                  <th> subject</th>
+                  <th> std</th>
+                  <th> sec</th>
+                  <th> pdf</th>
+                  <td>Download</td>
+                </thead>
+
+              {%for e in recs%}
+                <tr>
+
+                  <td>{{e.id}}</td>
+                  <td>{{e.title}}</td>
+                  <td>{{e.subject}}</td>
+                  <td>{{e.std}}</td>
+                  <td>{{e.sec}}</td>
+                  <td>{{e.pdf}}</td>
+                  <td><a href="{{e.pdf.url}}" class="btn btn-primary "> Download</a></td>
+                </tr>
+              {%endfor%}
+              </table>
+        {%endif%}
+
+          <br>
+
+
+        <!-- <form  method="post" enctype="multipart/form-data">
+          {{form1.as_p}}
+          {{form.as_p}}
+          {%csrf_token%}
+          <input type="submit" class="btn btn-primay" value="submit">
+        </form> -->
+      </div>
+  </div>
+{%endblock%}

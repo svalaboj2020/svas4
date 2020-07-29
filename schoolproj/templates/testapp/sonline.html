@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html' %}
+{%load static%}
+
+
+
+{%block child_block%}
+<link rel="stylesheet" href="{%static "css/home_c.css"%}">
+<link rel="stylesheet" href="{%static "css/shome.css"%}">
+
+<div class="sidenav">
+<a href="/shomesm"   > <img src="https://icons.iconarchive.com/icons/martz90/circle/64/books-icon.png" >Study Material</a>
+<a href="/sassign"><img src="https://icons.iconarchive.com/icons/blackvariant/shadow135-system/64/Notes-icon.png" >Assignments</a>
+<a href="/sonline"><img src="https://icons.iconarchive.com/icons/bokehlicia/captiva/64/movie-icon.png" >On line classes</a>
+<a href="/rvreport"><img src="https://icons.iconarchive.com/icons/sinisa91g/supernova/64/Videos-icon.png" >Recorded Classes</a>
+<a href="/sassignsub"><img src="https://icons.iconarchive.com/icons/blackvariant/shadow135-system/64/Notes-icon.png">Assignment submi</a>
+<a href="/sasreport"><img src="https://icons.iconarchive.com/icons/blackvariant/shadow135-system/64/Notes-icon.png">Assignment completed</a>
+</div>
+
+
+  <div class="container" align="center">
+      <h1>online class page </h1>
+      <p>{{sname}}</p>
+      <p>{{class}}</p>
+      <p>{{section}}</p>
+      <a href="https://meet.google.com/msn-rupw-bjz">online class</a>
+  </div>
+
+
+
+{%endblock%}

@@ -1,0 +1,23 @@
+<style>
+.footer {
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lightgreen;
+  color: white;
+  text-align: center;
+}
+</style>
+<style>
+        .tab1 {
+            tab-size: 2;
+        }
+</style>
+<div class="footer">
+    <a href="#"   > <img src="https://th.bing.com/th/id/OIP.wqYNv55k3JOe9UQd1CmNeQHaHa?w=31&h=31&c=7&o=5&dpr=1.25&pid=1.7" ></a> &emsp;&emsp;
+    <a href="https://www.facebook.com/sreenivas.valaboju/" > <img src="https://th.bing.com/th/id/OIP.BrkTWehSzp1WG820kOS-SwHaHp?w=30&h=31&c=7&o=5&dpr=1.25&pid=1.7"></a>&emsp;&emsp;
+    <a href="#"   > <img src="https://icons.iconarchive.com/icons/marcus-roberto/google-play/32/YouTube-icon.png"></a>&emsp;&emsp;
+    <a href="#"   > <img src="https://icons.iconarchive.com/icons/designbolts/3d-social/32/Twitter-icon.png"></a>&emsp;&emsp;
+    <a href="#"   > <img src="https://icons.iconarchive.com/icons/dtafalonso/android-l/32/WhatsApp-icon.png"></a>
+</div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{%extends 'testapp/shome.html' %}
+{%load static%}
+
+{%block grand_child_block%}
+
+#/smathsam   asm- assignment submission
+
+  <div class="container" align="center">
+      <h5>{{title}} </h5>
+      <p> {{request.user.username}}</p>
+      <p>  {{classx}}</p>
+      <p> {{section}}</p>
+
+      <a href="/smathsasm"   > <img src="https://icons.iconarchive.com/icons/kyo-tux/soft/64/Tutorial-icon.png" >Maths</a>
+      <a href="/senglishasm" >   <img src="https://icons.iconarchive.com/icons/martz90/circle/64/books-icon.png" >English</a>
+      <a href="/sscienceasm"   > <img src="https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/64/Categories-applications-education-science-icon.png">Science</a>
+      <a href="/shindiasm"   > <img src="https://icons.iconarchive.com/icons/alecive/flatwoken/64/Apps-Google-Play-Books-icon.png">Hindi</a>
+      <a href="/steluguasm"   > <img src="https://icons.iconarchive.com/icons/google/noto-emoji-objects/64/62858-closed-book-icon.png">Telugu</a>
+
+      <br>
+
+      <br>
+      <div class="container" align="center">
+
+        {%if acount %}
+        <form  method="post" enctype="multipart/form-data">
+          <table>
+
+            {{form}}
+
+          </table>
+          {%csrf_token%} <br>
+          <input type="submit" class="btn btn-success btn-primary" value="submit">
+        </form>
+        {%endif %}
+      </div>
+  </div>
+{%endblock%}

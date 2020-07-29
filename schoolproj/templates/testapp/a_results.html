@@ -1,0 +1,58 @@
+{%extends 'testapp/base.html' %}
+{%load static%}
+{%block child_block%}
+<link rel="stylesheet" href="{%static "css/home_c.css"%}">
+
+<link rel="stylesheet" href="{%static "css/shome.css"%}">
+
+<div class="sidenav">
+<a href="/shomesm"   > <img src="https://icons.iconarchive.com/icons/martz90/circle/64/books-icon.png" >Study Material</a>
+<a href="/sassign"><img src="https://icons.iconarchive.com/icons/blackvariant/shadow135-system/64/Notes-icon.png" >Assignments</a>
+<a href="/sonline"><img src="https://icons.iconarchive.com/icons/bokehlicia/captiva/64/movie-icon.png" >On line classes</a>
+<a href="/rvreport"><img src="https://icons.iconarchive.com/icons/sinisa91g/supernova/64/Videos-icon.png" >Recorded Classes</a>
+<a href="/sassignsub"><img src="https://icons.iconarchive.com/icons/blackvariant/shadow135-system/64/Notes-icon.png">Assignment submi</a>
+<a href="/sasreport"><img src="https://icons.iconarchive.com/icons/blackvariant/shadow135-system/64/Notes-icon.png">Assignment completed</a>
+
+</div>
+<div class="container" align="center">
+  <h1>Student Home page </h1>
+  <h5>{{title}} </h5>
+  <p> {{request.user.username}}</p>
+  <p>  {{classx}}</p>
+  <p>  {{section}}</p>
+
+
+  <br>
+  {%if form%}
+  {{form_as.p}}
+  {%endif%}
+
+    {%if areports %}
+
+    <table border="2">
+      <thead>
+        <th>Title</th>
+        <th>pdf</th>
+        <th>DownLoad</th>
+        <th>Std</th>
+        <th>Section</th>
+      </thead>
+      {%for areport in areports%}
+      <tr>
+        <td>{{areport.title}}</td>
+        <td>{%if areport.pdf %}{{areport.pdf}} {%endif%}</td>
+        <td>{%if areport.pdf %} <a href="{{areport.pdf.url}}" class="btn btn-primary "> View</a> {%endif%}</td>
+        <td>{{areport.std}}</td>
+        <td>{{areport.sec}}</td>
+      </tr>
+      {%endfor%}
+    </table>
+    {%else%}
+    <h1>No report records</h1>
+    {%endif%}
+
+
+
+</div>
+
+{%endblock%}

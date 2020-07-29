@@ -1,0 +1,57 @@
+{%extends 'testapp/base.html' %}
+{%load static%}
+{%block child_block%}
+<link rel="stylesheet" href="{%static "css/home_c.css"%}">
+
+<link rel="stylesheet" href="{%static "css/shome.css"%}">
+
+<div class="sidenav">
+<a href="/shomesm"   > <img src="https://icons.iconarchive.com/icons/martz90/circle/64/books-icon.png" >Study Material</a>
+<a href="/sassign"><img src="https://icons.iconarchive.com/icons/blackvariant/shadow135-system/64/Notes-icon.png" >Assignments</a>
+<a href="/sonline"><img src="https://icons.iconarchive.com/icons/bokehlicia/captiva/64/movie-icon.png" >On line classes</a>
+<a href="/rvreport"><img src="https://icons.iconarchive.com/icons/sinisa91g/supernova/64/Videos-icon.png" >Recorded Classes</a>
+<a href="/sassignsub"><img src="https://icons.iconarchive.com/icons/blackvariant/shadow135-system/64/Notes-icon.png">Assignment submi</a>
+<a href="/sasreport"><img src="https://icons.iconarchive.com/icons/blackvariant/shadow135-system/64/Notes-icon.png">Assignment completed</a>
+</div>
+
+<div class="container" align="center">
+  <h1>Student Home page </h1>
+  <h5>{{title}} </h5>
+  <br>
+  {%if form %}
+  <form method="post">
+    {{form.as_p}}
+    {%csrf_token%}
+    <input type="submit" class="btn btn-primary" value="submit">
+  </form>
+  {%endif%}
+</div>
+
+<div class="container" align="center" >
+  {%if recs %}
+
+  <table border="2">
+    <thead>
+      <th>aid</th>
+      <th>student_name</th>
+      <th>status</th>
+      <th>assignment.title</th>
+      <th>assignment.subject</th>
+      <th>assignment.std</th>
+    </thead>
+    {%for rec in recs%}
+    <tr>
+      <td>{{rec.assignment.id}}</td>
+      <td>{{rec.student_name}}</td>
+      <td>{{rec.status}}</td>
+      <td>{{rec.assignment.title}}</td>
+      <td>{{rec.assignment.subject}}</td>
+      <td>{{rec.assignment.std}}</td>
+    </tr>
+    {%endfor%}
+  </table>
+  {%else%}
+  <h1>No report records</h1>
+  {%endif%}
+</div>
+{%endblock%}

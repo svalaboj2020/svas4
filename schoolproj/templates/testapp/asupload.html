@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container" align="center">
+      <h1>Hello </h1>
+
+      {%if assignments%}
+            <table border="2">
+              <thead>
+                <th> id</th>
+                <th> title</th>
+                <th> subject</th>
+                <th> std</th>
+                <th> sec</th>
+                <th> pdf</th>
+              </thead>
+
+            {%for e in assignments%}
+              <tr>
+
+                <td>{{e.id}}</td>
+                <td>{{e.title}}</td>
+                <td>{{e.subject}}</td>
+                <td>{{e.std}}</td>
+                <td>{{e.sec}}</td>
+                <td>{{e.pdf}}</td>
+              </tr>
+            {%endfor%}
+            </table>
+      {%endif%}
+
+        <br>
+
+
+      <form  method="post" enctype="multipart/form-data">
+        {{form1}}
+        {{form.as_p}}
+        {%csrf_token%}
+        <input type="submit" class="btn btn-primay" value="submit">
+      </form>
+    </div>
+  </body>
+</html>

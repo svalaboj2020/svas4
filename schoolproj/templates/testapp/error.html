@@ -1,0 +1,12 @@
+{%extends 'testapp/base.html' %}
+{%load static%}
+{%block child_block%}
+<link rel="stylesheet" href="{%static "css/home_c.css"%}">
+<div class="container" align="center">
+  <h1>{{title}}</h1>
+
+    <h2>{{error}}</h2>
+
+</div>
+
+{%endblock%}
